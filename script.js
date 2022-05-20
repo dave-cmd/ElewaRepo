@@ -22,7 +22,7 @@ addButton.addEventListener('click', ()=>{
                 <input type="number" value="0" name="qty" id=${index} class="inp">
                 <input type="number"  value= 0 name="vat" id=${index} class="inp">
                 <p class="total" id=${index}>Ksh 0</p>
-                <p class="delete-btn" id=${index}>Delete</p>
+                <p class="delete-btn" id=${index}>...</p>
             </div>
     `
     index = index+1;
@@ -90,6 +90,18 @@ parent.addEventListener('change', (event)=>{
         VAT +=  subTotal * item['vat'] / 100
         Total += subTotal + VAT
     })
+
+    console.log(subTotal, VAT, Total)
+
+    //Set UI totals
+    const subTotalEL = document.querySelector(".subtotal-value")
+    subTotalEL.innerHTML = "Ksh " + JSON.stringify(subTotal || 0)
+
+    const subVATEL = document.querySelector(".vat-value")
+    subVATEL.innerHTML = "Ksh " + JSON.stringify(VAT || 0)
+
+    const TotalEL = document.querySelector(".total-value-final")
+    TotalEL.innerHTML = "Ksh " + JSON.stringify(Total || 0)
     
 
 })
