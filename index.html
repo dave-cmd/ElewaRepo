@@ -8,25 +8,46 @@
     <link rel="stylesheet" href="./style.css"></link>
 </head>
 <body>
+    <header>
+        <h1>Storefront Coding Challenge</h1>
+    </header>
     <div class="content">
-        <header>
-            <h1>Storefront Coding Challenge</h1>
-        </header>
+
+        <div class="labels">
+            <div>Description</div>
+            <div>Cost</div>
+            <div>Qty</div>
+            <div>Vat(%)</div>
+            <div>Total</div>
+            <div>Actions</div>
+        </div>
         <form class="form">
             <div class="form-item">
                 <input type="text" placeholder="Enter item name" name="desc" id = 0 class="inp">
                 <input type="number"  value="0" name="cost" id = 0 class="inp">
                 <input type="number" value="0" name="qty" id = 0 class="inp">
                 <input type="number"  value= 0 name="vat" id = 0 class="inp">
-                <p class="total" id = 0>0</p>
-                <button class="">Delete</button>
+                <p class="total" id = 0>Ksh 0</p>
+                <p class="delete">Delete</p>
             </div>
-
         </form>
-        <div>
+        <div class="addItem-wrapper">
             <button class="add-btn">AddItem</button>
         </div>
-        <article>TODO...</article>
+        <article>
+            <div>
+                <div class="subtotal">Subtotal</div>
+                <div class="subtotal-value">Ksh 0</div>
+            </div>
+            <div>
+                <div class="vat">VAT Total</div>
+                <div class="vat-value">Ksh 0</div>
+            </div>
+            <div>
+                <div class="total">Total</div>
+                <div class="total-value">Ksh 0</div>
+            </div>
+        </article>
     </div>
     
 <script src="./script.js"></script>

@@ -6,6 +6,9 @@ body {
  .content {
      display: flex;
      flex-direction: column;
+     align-items: flex-end;
+     gap: 10px;
+     padding: 20px;
  }
 
  header {
@@ -13,13 +16,78 @@ body {
      align-items: center;
      justify-content: center;
      background-color: royalblue;
+     width: 100%;
      
  }
+
+ .labels {
+     display: grid;
+     grid-template-columns: 16% 16% 16% 16% 16% 16% ;
+     width: 100%;
+     gap: 2%;
+    color: royalblue;
+    font-weight: 600;
+
+ }
+
 
  header > h1 {
      color : white;
  }
 
- .form-item {
+.form {
+     width: 100%;
      display: flex;
+     flex-direction: column;
+     gap: 5px;
+ }
+
+
+ .form-item {
+    display: grid;
+    grid-template-columns: 16% 16% 16% 16% 16% 16% ;
+    width: 100%;
+    gap: 2%;
+ }
+
+ .form-item  > input {
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 2px;
+ }
+
+ .addItem-wrapper {
+     width: 100%;
+ }
+
+ .add-btn {
+    border: solid 2px rgba(0,0,0, 0.6);
+    color: white;
+    background-color: purple;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+    
+.add-btn:hover {
+    cursor: pointer;
+}
+
+ article {
+     width: 40%;
+     display: flex;
+     flex-direction: column;
+ }
+
+ article > div {
+     display: flex;
+     justify-content: space-between;
  }

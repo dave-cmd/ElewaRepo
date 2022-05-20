@@ -21,8 +21,8 @@ addButton.addEventListener('click', ()=>{
                 <input type="number"  value="0" name="cost" id=${index} class="inp">
                 <input type="number" value="0" name="qty" id=${index} class="inp">
                 <input type="number"  value= 0 name="vat" id=${index} class="inp">
-                <p class="total" id=${index}>0</p>
-                <button class="delete-btn" id=${index}>Delete</button>
+                <p class="total" id=${index}>Ksh 0</p>
+                <p class="delete-btn" id=${index}>Delete</p>
             </div>
     `
     index = index+1;
@@ -60,7 +60,6 @@ parent.addEventListener('change', (event)=>{
         }
         return false
     })
-
     
     if(present === undefined){
         arr.push({id:id, [name]:value})
@@ -69,25 +68,30 @@ parent.addEventListener('change', (event)=>{
         arr.find(item=> item.id === id)[name] = value
     }
 
-
-    //Set total
-    // let totalEL = document.getElementById()
-
-    // const result = arr.find(item=> item.id === id)["cost"] * arr.find(item=> item.id === id)["qty"]
-
-    // console.log(JSON.stringify(result))
-
-    // totalEL.innerHTML =  JSON.stringify(result)
-
+    //Calculate total for each row
     const elementsEL = document.querySelectorAll(".total")
     for(let i=0; i<elementsEL.length; i++){
         if (elementsEL[i].id === id){
-            console.log(elementsEL[i])
+            // console.log(elementsEL[i])
             const result = arr.find(item=> item.id === id)["cost"] * arr.find(item=> item.id === id)["qty"]
-            console.log(JSON.stringify(result))
-            elementsEL[i].innerHTML =  JSON.stringify(result)
+            // console.log(JSON.stringify(result))
+            elementsEL[i].innerHTML = "Ksh " + JSON.stringify(result)
         }
     }
+
+
+    //Calculate main totals
+    let subTotal = 0
+    let VAT = 0
+    let Total = 0
+
+    arr.forEach(item =>{
+        subTotal += item['cost'] * item['qty'] 
+        VAT +=  subTotal * item['vat'] / 100
+        Total += subTotal + VAT
+    })
+    
+
 })
 
 
