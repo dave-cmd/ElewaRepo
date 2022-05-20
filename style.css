@@ -1,0 +1,25 @@
+body {
+    padding: 0; 
+    margin: 0;
+ }
+
+ .content {
+     display: flex;
+     flex-direction: column;
+ }
+
+ header {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background-color: royalblue;
+     
+ }
+
+ header > h1 {
+     color : white;
+ }
+
+ .form-item {
+     display: flex;
+ }
